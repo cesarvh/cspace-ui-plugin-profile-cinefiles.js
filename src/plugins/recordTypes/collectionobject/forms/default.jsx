@@ -9,10 +9,12 @@ const template = (pluginContext) => {
     Panel,
     Row,
     Col,
+    Cols,
   } = pluginContext.layoutComponents;
 
   const {
     Field,
+    InputTable,
   } = pluginContext.recordComponents;
 
   const {
@@ -25,24 +27,91 @@ const template = (pluginContext) => {
         <Row>
           <Col>
             <Field name="objectNumber" />
-            <Field name="numberOfObjects" />
+            {/* <Field name="numberOfObjects" /> */}
 
             <Field name="responsibleDepartments">
               <Field name="responsibleDepartment" />
             </Field>
 
             <Field name="collection" />
-            <Field name="recordStatus" />
 
-            <Field name="publishToList">
-              <Field name="publishTo" />
+            <InputTable name="titleGroup">
+              <Field name="docTitleArticle" subpath="ns2:collectionobjects_cinefiles" />
+              <Field name="docTitle" subpath="ns2:collectionobjects_cinefiles" />
+              <Field name="docDisplayName" subpath="ns2:collectionobjects_cinefiles" />
+            </InputTable>
+
+            <Field name="docType" subpath="ns2:collectionobjects_cinefiles" />
+
+            <Field name="objectProductionDateGroupList">
+              <Field name="objectProductionDateGroup" />
             </Field>
 
-            <Field name="inventoryStatusList">
-              <Field name="inventoryStatus" />
+            <Field name="objectProductionPersonGroupList">
+              <Field name="objectProductionPersonGroup">
+                <Field name="objectProductionPerson" />
+                <Field name="objectProductionPersonRole" />
+              </Field>
+            </Field>
+          </Col>
+
+          <Col>
+            <Field name="source" subpath="ns2:collectionobjects_cinefiles" />
+            <Row>
+              <Col>
+                <Field name="pageInfo" subpath="ns2:collectionobjects_cinefiles" />
+                <Field name="accessCode" subpath="ns2:collectionobjects_cinefiles" />
+              </Col>
+
+              <Col>
+                <Field name="numberOfObjects" />
+                <Field name="recordStatus" />
+              </Col>
+            </Row>
+
+            <Field name="briefDescriptions">
+              <Field name="briefDescription" />
+            </Field>
+
+            <Field name="distinguishingFeatures" />
+
+            <Field name="comments">
+              <Field name="comment" />
             </Field>
           </Col>
         </Row>
+
+        <Row>
+          <Field name="hasCastCr" subpath="ns2:collectionobjects_cinefiles" />
+          <Field name="hasTechCr" subpath="ns2:collectionobjects_cinefiles" />
+          <Field name="hasBoxInfo" subpath="ns2:collectionobjects_cinefiles" />
+          <Field name="hasFilmog" subpath="ns2:collectionobjects_cinefiles" />
+          <Field name="hasBiblio" subpath="ns2:collectionobjects_cinefiles" />
+          <Field name="hasDistCo" subpath="ns2:collectionobjects_cinefiles" />
+          <Field name="hasProdCo" subpath="ns2:collectionobjects_cinefiles" />
+          <Field name="hasCostInfo" subpath="ns2:collectionobjects_cinefiles" />
+          <Field name="hasIllust" subpath="ns2:collectionobjects_cinefiles" />
+        </Row>
+
+        <Cols>
+          <Col>
+            <Field name="docLanguages" subpath="ns2:collectionobjects_cinefiles">
+              <Field name="docLanguage" />
+            </Field>
+            <Field name="docSubjects" subpath="ns2:collectionobjects_cinefiles">
+              <Field name="docSubject" />
+            </Field>
+          </Col>
+
+          <Col>
+            <Field name="filmSubjects" subpath="ns2:collectionobjects_cinefiles">
+              <Field name="filmSubject" />
+            </Field>
+            <Field name="nameSubjects" subpath="ns2:collectionobjects_cinefiles">
+              <Field name="nameSubject" />
+            </Field>
+          </Col>
+        </Cols>
       </Panel>
 
       <Panel name="desc" collapsible collapsed>
@@ -63,7 +132,7 @@ const template = (pluginContext) => {
             </Field>
           </Col>
         </Row>
-        
+
         {extensions.dimension.form}
 
         <Field name="physicalDescription" />
@@ -152,15 +221,13 @@ const template = (pluginContext) => {
         </Panel>
       </Panel>
 
-      <Panel name="prod" collapsible collapsed>
-        <Row>
-          <Field name="objectProductionPersonGroupList">
-            <Field name="objectProductionPersonGroup">
-              <Field name="objectProductionPerson" />
-              <Field name="objectProductionPersonRole" />
-            </Field>
+      <Panel name="reference" collapsible collapsed>
+        <Field name="referenceGroupList">
+          <Field name="referenceGroup">
+            <Field name="reference" />
+            <Field name="referenceNote" />
           </Field>
-        </Row>
+        </Field>
       </Panel>
 
       <Panel name="hierarchy" collapsible collapsed>
