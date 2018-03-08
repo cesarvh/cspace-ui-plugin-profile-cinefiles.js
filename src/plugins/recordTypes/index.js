@@ -2,12 +2,14 @@ import concept from './concept';
 import organization from './organization';
 import person from './person';
 import work from './work';
+import collectionobject from './collectionobject';
 
 export default [
   concept,
   organization,
   person,
   work,
+  collectionobject,
   () => ({
     recordTypes: {
       citation: {
