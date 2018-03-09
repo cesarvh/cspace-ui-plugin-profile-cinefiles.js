@@ -1,13 +1,11 @@
 import { defineMessages } from 'react-intl';
+// import { computeDocDisplayName } from './utils';
 
 export default (pluginContext) => {
   const {
     AutocompleteInput,
     CompoundInput,
-    // DateInput,
-    // IDGeneratorInput,
     OptionPickerInput,
-    // StructuredDateInput,
     TextInput,
     TermPickerInput,
     CheckboxInput,
@@ -18,15 +16,8 @@ export default (pluginContext) => {
   } = pluginContext.configHelpers;
 
   const {
-    // DATA_TYPE_INT,
-    // DATA_TYPE_FLOAT,
-    // DATA_TYPE_STRUCTURED_DATE,
     DATA_TYPE_BOOL,
   } = pluginContext.dataTypes;
-
-  // const {
-  //   extensions,
-  // } = pluginContext.config;
 
   return {
     document: {
@@ -84,6 +75,7 @@ export default (pluginContext) => {
                 readOnly: true,
               },
             },
+            // compute: ({ data, path, recordData }) => computeDocDisplayName(data),
           },
         },
         docType: {
@@ -114,7 +106,7 @@ export default (pluginContext) => {
             view: {
               type: AutocompleteInput,
               props: {
-                source: 'organization/local', // TO DO: Correct the source
+                source: 'organization/organization', // TO DO: Correct the source?
               },
             },
           },
@@ -164,6 +156,7 @@ export default (pluginContext) => {
             },
           },
         },
+        hasCastCrSearch: {},
         hasTechCr: {
           [config]: {
             messages: defineMessages({
@@ -178,6 +171,7 @@ export default (pluginContext) => {
             },
           },
         },
+        hasTechCrSearch: {},
         hasBoxInfo: {
           [config]: {
             messages: defineMessages({
@@ -192,6 +186,7 @@ export default (pluginContext) => {
             },
           },
         },
+        hasBoxInfoSearch: {},
         hasFilmog: {
           [config]: {
             messages: defineMessages({
@@ -206,6 +201,7 @@ export default (pluginContext) => {
             },
           },
         },
+        hasFilmogSearch: {},
         hasBiblio: {
           [config]: {
             messages: defineMessages({
@@ -220,6 +216,7 @@ export default (pluginContext) => {
             },
           },
         },
+        hasBiblioSearch: {},
         hasDistCo: {
           [config]: {
             messages: defineMessages({
@@ -234,6 +231,7 @@ export default (pluginContext) => {
             },
           },
         },
+        hasDistCoSearch: {},
         hasProdCo: {
           [config]: {
             messages: defineMessages({
@@ -248,6 +246,7 @@ export default (pluginContext) => {
             },
           },
         },
+        hasProdCoSearch: {},
         hasCostInfo: {
           [config]: {
             messages: defineMessages({
@@ -262,6 +261,7 @@ export default (pluginContext) => {
             },
           },
         },
+        hasCostInfoSearch: {},
         hasIllust: {
           [config]: {
             messages: defineMessages({
@@ -276,6 +276,7 @@ export default (pluginContext) => {
             },
           },
         },
+        hasIllustSearch: {},
         docLanguages: {
           [config]: {
             view: {
@@ -318,7 +319,7 @@ export default (pluginContext) => {
               view: {
                 type: AutocompleteInput,
                 props: {
-                  source: 'person/local, organization/local', // TO DO: Fix me
+                  source: 'person/person, organization/organization, organization/committee', // TO DO: Fix source names?
                 },
               },
             },
@@ -342,7 +343,7 @@ export default (pluginContext) => {
               view: {
                 type: AutocompleteInput,
                 props: {
-                  source: 'work/local', // TO DO: Fix me
+                  source: 'work/work', // TO DO: Fix source names?
                 },
               },
             },
@@ -366,7 +367,7 @@ export default (pluginContext) => {
               view: {
                 type: AutocompleteInput,
                 props: {
-                  source: 'concept/local', // TO DO: Fix me
+                  source: 'concept/concept', // TO DO: Fix me
                 },
               },
             },
@@ -394,6 +395,59 @@ export default (pluginContext) => {
                 defaultMessage: 'External document URL details',
               },
             }),
+          },
+        },
+        contentConcepts: {
+          contentConcept: {
+            [config]: {
+              view: {
+                props: {
+                  source: 'concept/concept, concept/genre', // TO DO: Fix vocab terms?
+                },
+              },
+            },
+          },
+        },
+        contentPersons: {
+          contentPerson: {
+            [config]: {
+              repeating: true,
+              view: {
+                type: AutocompleteInput,
+                props: {
+                  source: 'person/person', // TO DO: Change source name?
+                },
+              },
+            },
+          },
+        },
+        contentOrganizations: {
+          contentOrganization: {
+            [config]: {
+              repeating: true,
+              view: {
+                type: AutocompleteInput,
+                props: {
+                  source: 'organization/organization, organization/committee',
+                },
+              },
+            },
+          },
+        },
+        objectProductionPersonGroupList: {
+          objectProductionPersonGroup: {
+            objectProductionPersonRole: {
+              [config]: {
+                view: {
+                  type: TermPickerInput,
+                  props: {
+                    source: 'productionpersonrole',
+                    // ONLY works if there are 1+ terms in the array
+                  },
+                },
+                defaultValue: 'Author',
+              },
+            },
           },
         },
       },
