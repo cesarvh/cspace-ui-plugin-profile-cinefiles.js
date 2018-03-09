@@ -1,3 +1,4 @@
+import advancedSearch from './advancedSearch';
 import forms from './forms';
 import fields from './fields';
 import optionLists from './optionLists';
@@ -14,6 +15,7 @@ export default () => pluginContext => ({
       forms: forms(pluginContext),
       fields: fields(pluginContext),
       title: title(pluginContext),
+      advancedSearch: advancedSearch(pluginContext),
     },
   },
 });

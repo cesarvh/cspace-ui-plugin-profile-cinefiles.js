@@ -70,6 +70,12 @@ export default (pluginContext) => {
                 defaultMessage: 'Display Name',
               },
             }),
+            searchView: {
+              type: TextInput,
+              props: {
+                required: false,
+              },
+            },
             view: {
               type: TextInput,
               props: {
