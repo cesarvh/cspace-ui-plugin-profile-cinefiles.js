@@ -291,6 +291,20 @@ export default {
       },
     }),
   },
-
-
+  checkBoxOptions: {
+    values: [
+      'true',
+      'false',
+    ],
+    messages: defineMessages({
+      true: {
+        id: 'option.collections.true',
+        defaultMessage: 'Yes',
+      },
+      false: {
+        id: 'option.collections.false',
+        defaultMessage: 'No',
+      },
+    }),
+  },
 };

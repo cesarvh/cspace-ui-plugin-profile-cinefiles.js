@@ -16,7 +16,8 @@ export default (pluginContext) => {
   } = pluginContext.configHelpers;
 
   const {
-    DATA_TYPE_BOOL,
+    // DATA_TYPE_BOOL,
+    DATA_TYPE_STRING,
   } = pluginContext.dataTypes;
 
   return {
@@ -155,13 +156,35 @@ export default (pluginContext) => {
                 defaultMessage: 'Cast cr.',
               },
             }),
-            dataType: DATA_TYPE_BOOL,
+            searchView: {
+              type: OptionPickerInput,
+              props: {
+                source: 'checkBoxOptions',
+                repeating: false,
+              },
+            },
             view: {
+              // dataType: DATA_TYPE_BOOL,
               type: CheckboxInput,
             },
           },
         },
-        hasCastCrSearch: {},
+        hasCastCrSearch: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_cinefiles.hasCastCrSearch.name',
+                defaultMessage: 'Cast cr.',
+              },
+            }),
+            view: {
+              type: OptionPickerInput,
+              props: {
+                source: 'checkBoxOptions',
+              },
+            },
+          },
+        },
         hasTechCr: {
           [config]: {
             messages: defineMessages({
@@ -170,13 +193,35 @@ export default (pluginContext) => {
                 defaultMessage: 'Tech cr.',
               },
             }),
-            dataType: DATA_TYPE_BOOL,
+            // dataType: DATA_TYPE_BOOL,
+            searchView: {
+              type: OptionPickerInput,
+              props: {
+                source: 'checkBoxOptions',
+                repeating: false,
+              },
+            },
             view: {
               type: CheckboxInput,
             },
           },
         },
-        hasTechCrSearch: {},
+        hasTechCrSearch: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_cinefiles.hasTechCrSearch.name',
+                defaultMessage: 'Tech cr.',
+              },
+            }),
+            view: {
+              type: OptionPickerInput,
+              props: {
+                source: 'checkBoxOptions',
+              },
+            },
+          },
+        },
         hasBoxInfo: {
           [config]: {
             messages: defineMessages({
@@ -185,13 +230,35 @@ export default (pluginContext) => {
                 defaultMessage: 'Box Office.',
               },
             }),
-            dataType: DATA_TYPE_BOOL,
+            // dataType: DATA_TYPE_BOOL,
+            searchView: {
+              type: OptionPickerInput,
+              props: {
+                source: 'checkBoxOptions',
+                repeating: false,
+              },
+            },
             view: {
               type: CheckboxInput,
             },
           },
         },
-        hasBoxInfoSearch: {},
+        hasBoxInfoSearch: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_cinefiles.hasBoxInfoSearch.name',
+                defaultMessage: 'Box Office.',
+              },
+            }),
+            view: {
+              type: OptionPickerInput,
+              props: {
+                source: 'checkBoxOptions',
+              },
+            },
+          },
+        },
         hasFilmog: {
           [config]: {
             messages: defineMessages({
@@ -200,13 +267,35 @@ export default (pluginContext) => {
                 defaultMessage: 'Filmography',
               },
             }),
-            dataType: DATA_TYPE_BOOL,
+            // dataType: DATA_TYPE_BOOL,
+            searchView: {
+              type: OptionPickerInput,
+              props: {
+                source: 'checkBoxOptions',
+                repeating: false,
+              },
+            },
             view: {
               type: CheckboxInput,
             },
           },
         },
-        hasFilmogSearch: {},
+        hasFilmogSearch: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_cinefiles.hasFilmogSearch.name',
+                defaultMessage: 'Filmography',
+              },
+            }),
+            view: {
+              type: OptionPickerInput,
+              props: {
+                source: 'checkBoxOptions',
+              },
+            },
+          },
+        },
         hasBiblio: {
           [config]: {
             messages: defineMessages({
@@ -215,13 +304,35 @@ export default (pluginContext) => {
                 defaultMessage: 'Bibliography',
               },
             }),
-            dataType: DATA_TYPE_BOOL,
+            // dataType: DATA_TYPE_BOOL,
+            searchView: {
+              type: OptionPickerInput,
+              props: {
+                source: 'checkBoxOptions',
+                repeating: false,
+              },
+            },
             view: {
               type: CheckboxInput,
             },
           },
         },
-        hasBiblioSearch: {},
+        hasBiblioSearch: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_cinefiles.hasBiblioSearch.name',
+                defaultMessage: 'Bibliography',
+              },
+            }),
+            view: {
+              type: OptionPickerInput,
+              props: {
+                source: 'checkBoxOptions',
+              },
+            },
+          },
+        },
         hasDistCo: {
           [config]: {
             messages: defineMessages({
@@ -230,13 +341,35 @@ export default (pluginContext) => {
                 defaultMessage: 'Dist. co.',
               },
             }),
-            dataType: DATA_TYPE_BOOL,
+            // dataType: DATA_TYPE_BOOL,
+            searchView: {
+              type: OptionPickerInput,
+              props: {
+                source: 'checkBoxOptions',
+                repeating: false,
+              },
+            },
             view: {
               type: CheckboxInput,
             },
           },
         },
-        hasDistCoSearch: {},
+        hasDistCoSearch: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_cinefiles.hasDistCoSearch.name',
+                defaultMessage: 'Dist. co.',
+              },
+            }),
+            view: {
+              type: OptionPickerInput,
+              props: {
+                source: 'checkBoxOptions',
+              },
+            },
+          },
+        },
         hasProdCo: {
           [config]: {
             messages: defineMessages({
@@ -245,13 +378,35 @@ export default (pluginContext) => {
                 defaultMessage: 'Prod. co.',
               },
             }),
-            dataType: DATA_TYPE_BOOL,
+            // dataType: DATA_TYPE_BOOL,
+            searchView: {
+              type: OptionPickerInput,
+              props: {
+                source: 'checkBoxOptions',
+                repeating: false,
+              },
+            },
             view: {
               type: CheckboxInput,
             },
           },
         },
-        hasProdCoSearch: {},
+        hasProdCoSearch: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_cinefiles.hasProdCoSearch.name',
+                defaultMessage: 'Prod. co.',
+              },
+            }),
+            view: {
+              type: OptionPickerInput,
+              props: {
+                source: 'checkBoxOptions',
+              },
+            },
+          },
+        },
         hasCostInfo: {
           [config]: {
             messages: defineMessages({
@@ -260,13 +415,35 @@ export default (pluginContext) => {
                 defaultMessage: 'Cost information',
               },
             }),
-            dataType: DATA_TYPE_BOOL,
+            // dataType: DATA_TYPE_BOOL,
+            searchView: {
+              type: OptionPickerInput,
+              props: {
+                source: 'checkBoxOptions',
+                repeating: false,
+              },
+            },
             view: {
               type: CheckboxInput,
             },
           },
         },
-        hasCostInfoSearch: {},
+        hasCostInfoSearch: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_cinefiles.hasCostInfoSearch.name',
+                defaultMessage: 'Cost information',
+              },
+            }),
+            view: {
+              type: OptionPickerInput,
+              props: {
+                source: 'checkBoxOptions',
+              },
+            },
+          },
+        },
         hasIllust: {
           [config]: {
             messages: defineMessages({
@@ -275,13 +452,35 @@ export default (pluginContext) => {
                 defaultMessage: 'With illustration',
               },
             }),
-            dataType: DATA_TYPE_BOOL,
+            searchView: {
+              type: OptionPickerInput,
+              props: {
+                source: 'checkBoxOptions',
+                repeating: false,
+              },
+            },
+            // dataType: DATA_TYPE_BOOL,
             view: {
               type: CheckboxInput,
             },
           },
         },
-        hasIllustSearch: {},
+        hasIllustSearch: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_cinefiles.hasIllustSearch.name',
+                defaultMessage: 'With illustration',
+              },
+            }),
+            view: {
+              type: OptionPickerInput,
+              props: {
+                source: 'checkBoxOptions',
+              },
+            },
+          },
+        },
         docLanguages: {
           [config]: {
             view: {
