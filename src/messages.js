@@ -16,4 +16,7 @@ export default {
 
   'vocab.location.local.name': 'Locations',
   'vocab.location.local.collectionName': 'Storage Locations',
+
+  'vocab.place.local.name': 'Places',
+  'vocab.place.local.collectionName': 'Places',
 };
