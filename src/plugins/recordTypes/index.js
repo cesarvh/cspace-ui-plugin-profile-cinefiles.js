@@ -2,12 +2,14 @@ import concept from './concept';
 import organization from './organization';
 import person from './person';
 import work from './work';
+import media from './media';
 
 export default [
   concept,
   organization,
   person,
   work,
+  media,
   () => ({
     recordTypes: {
       citation: {
