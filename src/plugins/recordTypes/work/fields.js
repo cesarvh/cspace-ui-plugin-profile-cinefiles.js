@@ -1,8 +1,8 @@
 import { defineMessages } from 'react-intl';
+import { computeDisplayName } from './utils';
 
 export default (pluginContext) => {
   const {
-    OptionPickerInput,
     CompoundInput,
     TermPickerInput,
     AutocompleteInput,
@@ -144,27 +144,14 @@ export default (pluginContext) => {
       'ns2:works_common': {
         workTermGroupList: {
           workTermGroup: {
+            [config]: {
+              compute: computeDisplayName,
+            },
             termDisplayName: {
               [config]: {
-                required: false,
                 view: {
                   props: {
                     readOnly: true,
-                  },
-                },
-              },
-            },
-            termName: {
-              [config]: {
-                required: true,
-              },
-            },
-            termQualifier: {
-              [config]: {
-                view: {
-                  type: OptionPickerInput,
-                  props: {
-                    source: 'articles',
                   },
                 },
               },
