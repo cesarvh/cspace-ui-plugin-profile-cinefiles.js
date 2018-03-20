@@ -17,7 +17,9 @@ export default {
   'vocab.location.local.name': 'Locations',
   'vocab.location.local.collectionName': 'Storage Locations',
 
-  'vocab.work.local.name': 'Moving Images',
+  'vocab.work.local.name': 'Moving Image',
+  'vocab.work.local.collectionName': 'Moving Images',
+
   'field.works_common.termName.name': 'Title',
   'field.works_common.termQualifier.name': 'Article',
 };
