@@ -116,24 +116,21 @@ const template = (pluginContext) => {
 
       <Panel name="desc" collapsible collapsed>
         <Row>
-          <Col>
-            <Field name="copyNumber" />
-
-            <Field name="objectStatusList">
-              <Field name="objectStatus" />
-            </Field>
-          </Col>
-
-          <Col>
-            <Field name="editionNumber" />
-
-            <Field name="colors">
-              <Field name="color" />
-            </Field>
-          </Col>
+          <Field name="copyNumber" />
+          <Field name="editionNumber" />
         </Row>
 
         {extensions.dimension.form}
+        <Row>
+          <Field name="objectStatusList">
+            <Field name="objectStatus" />
+          </Field>
+
+          <Field name="colors">
+            <Field name="color" />
+          </Field>
+        </Row>
+
 
         <Field name="physicalDescription" />
 

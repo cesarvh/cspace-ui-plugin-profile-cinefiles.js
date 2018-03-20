@@ -42,5 +42,5 @@ export default {
   
   'panel.collectionobject.reference': 'External document URL information',
   'field.collectionobjects_common.reference.name': 'Source',
-  'field.collectionobjects_common.referenceNote.name': 'Note',
+  'field.collectionobjects_common.referenceNote.name': 'URL',
 };

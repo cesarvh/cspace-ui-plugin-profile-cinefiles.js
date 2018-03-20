@@ -1,5 +1,5 @@
 import { defineMessages } from 'react-intl';
-// import { computeDocDisplayName } from './utils';
+import { computeDocDisplayName } from './utils';
 
 export default (pluginContext) => {
   const {
@@ -23,6 +23,7 @@ export default (pluginContext) => {
     document: {
       'ns2:collectionobjects_cinefiles': {
         [config]: {
+          compute: computeDocDisplayName,
           service: {
             ns: 'http://collectionspace.org/services/collectionobject/local/cinefiles',
           },
@@ -80,6 +81,7 @@ export default (pluginContext) => {
         },
         docType: {
           [config]: {
+            defaultValue: 'urn:cspace:cinefiles.cspace.berkeley.edu:vocabularies:name(doctype):item:name(2)\'article\'',
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_cinefiles.docType.name',
@@ -127,7 +129,6 @@ export default (pluginContext) => {
         },
         accessCode: {
           [config]: {
-            defaultValue: 'PFA Staff Only',
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_cinefiles.accessCode.name',
