@@ -9,16 +9,20 @@ export const isBlank = string =>
   (typeof (string) === 'undefined' || !nonWhitespacePattern.test(string));
 
 export const computeDisplayName = ({ data }) => {
-  let article = data.get('termQualifier' || '');
+  const article = data.get('termQualifier' || '');
   let title = data.get('termName' || '');
 
   title = isBlank(title) ? '' : title.trim();
-  article = isBlank(article) ? '' : article.trim();
 
   if (isBlank(article)) {
-    return data.set('termDisplayName', title);
+    return data
+      .set('termDisplayName', title)
+      .set('termDisplayNameSearch', title);
   }
 
-  const displayName = requiresFollowingSpace(article) ? `${article} ${title}` : article + title;
-  return data.set('termDisplayName', displayName);
+  const displayName = requiresFollowingSpace(article) ? `${article} ${title}` : `${article}${title}`;
+  console.log(displayName.length);
+  return data
+    .set('termDisplayName', displayName)
+    .set('termDisplayNameSearch', displayName);
 };

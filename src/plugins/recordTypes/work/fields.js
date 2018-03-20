@@ -6,6 +6,7 @@ export default (pluginContext) => {
     CompoundInput,
     TermPickerInput,
     AutocompleteInput,
+    OptionPickerInput,
   } = pluginContext.inputComponents;
 
   const {
@@ -140,6 +141,17 @@ export default (pluginContext) => {
             },
           },
         },
+        termDisplayNameSearch: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.works_cinefiles.termDisplayNameSearch.name',
+                defaultMessage: 'Term display name',
+              },
+            }),
+            repeating: true,
+          },
+        },
       },
       'ns2:works_common': {
         workTermGroupList: {
@@ -152,6 +164,16 @@ export default (pluginContext) => {
                 view: {
                   props: {
                     readOnly: true,
+                  },
+                },
+              },
+            },
+            termQualifier: {
+              [config]: {
+                view: {
+                  type: OptionPickerInput,
+                  props: {
+                    source: 'articles',
                   },
                 },
               },
