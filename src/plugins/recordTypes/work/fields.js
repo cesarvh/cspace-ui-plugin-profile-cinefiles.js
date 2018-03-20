@@ -1,5 +1,5 @@
 import { defineMessages } from 'react-intl';
-import { computeDisplayName } from './utils';
+import { computeWorkDisplayName } from '../utils';
 
 export default (pluginContext) => {
   const {
@@ -157,7 +157,7 @@ export default (pluginContext) => {
         workTermGroupList: {
           workTermGroup: {
             [config]: {
-              compute: computeDisplayName,
+              compute: computeWorkDisplayName,
             },
             termDisplayName: {
               [config]: {
