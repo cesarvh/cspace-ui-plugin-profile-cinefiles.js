@@ -21,7 +21,6 @@ export const computeDisplayName = ({ data }) => {
   }
 
   const displayName = requiresFollowingSpace(article) ? `${article} ${title}` : `${article}${title}`;
-  console.log(displayName.length);
   return data
     .set('termDisplayName', displayName)
     .set('termDisplayNameSearch', displayName);

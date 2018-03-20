@@ -180,6 +180,29 @@ export default (pluginContext) => {
             },
           },
         },
+        publisherGroupList: {
+          publisherGroup: {
+            publisherType: {
+              [config]: {
+                defaultValue: 'urn:cspace:cinefiles.cspace.berkeley.edu:vocabularies:name(workpublishertype):item:name(productioncompany)\'Production Company\'',
+              },
+            },
+          },
+        },
+        workType: {
+          [config]: {
+            defaultValue: 'urn:cspace:core.collectionspace.org:vocabularies:name(worktype):item:name(film)\'Film\'',
+          },
+        },
+        creatorGroupList: {
+          creatorGroup: {
+            creatorType: {
+              [config]: {
+                defaultValue: 'urn:cspace:cinefiles.cspace.berkeley.edu:vocabularies:name(workcreatortype):item:name(director)\'Director\'',
+              },
+            },
+          },
+        },
       },
     },
   };
