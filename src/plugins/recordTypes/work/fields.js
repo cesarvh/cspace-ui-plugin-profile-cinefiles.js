@@ -7,6 +7,7 @@ export default (pluginContext) => {
     TermPickerInput,
     AutocompleteInput,
     OptionPickerInput,
+    TextInput,
   } = pluginContext.inputComponents;
 
   const {
@@ -164,6 +165,12 @@ export default (pluginContext) => {
                 view: {
                   props: {
                     readOnly: true,
+                  },
+                },
+                searchView: {
+                  type: TextInput,
+                  props: {
+                    readOnly: false,
                   },
                 },
               },
