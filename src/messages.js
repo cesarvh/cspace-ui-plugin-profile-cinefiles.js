@@ -25,4 +25,7 @@ export default {
 
   'vocab.concept.associated.name': 'Subject',
   'vocab.concept.associated.collectionName': 'Subjects',
+
+  'field.persons_common.birthPlace.name': 'Country of birth',
+  // 'field.persons_common.birthPlace.fullName': 'Birth country',
 };
