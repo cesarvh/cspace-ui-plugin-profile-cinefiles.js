@@ -39,7 +39,7 @@ export default {
   'vocab.work.local.collectionName': 'Moving Images',
   'field.works_common.termName.name': 'Title',
   'field.works_common.termQualifier.name': 'Article',
-  
+
   'panel.collectionobject.reference': 'External document URL information',
   'field.collectionobjects_common.reference.name': 'Source',
   'field.collectionobjects_common.referenceNote.name': 'URL',

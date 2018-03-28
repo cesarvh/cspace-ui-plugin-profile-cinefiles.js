@@ -1,5 +1,5 @@
 import { defineMessages } from 'react-intl';
-import { computeDocDisplayName } from './utils';
+import { computeDocDisplayName } from '../utils';
 
 export default (pluginContext) => {
   const {

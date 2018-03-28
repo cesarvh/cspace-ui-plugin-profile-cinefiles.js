@@ -26,3 +26,11 @@ export const computeWorkDisplayName = ({ data }) => {
 
   return data.set('termDisplayName', displayName);
 };
+
+export const computeDocDisplayName = ({ data }) => {
+  const article = data.get('docTitleArticle' || '');
+  const title = data.get('docTitle' || '');
+  const displayName = computeFullTitle(article, title);
+
+  return data.set('docDisplayName', displayName);
+};
