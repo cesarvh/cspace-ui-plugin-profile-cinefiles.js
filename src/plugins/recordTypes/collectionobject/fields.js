@@ -376,6 +376,15 @@ export default (pluginContext) => {
         },
       },
       'ns2:collectionobjects_common': {
+        objectNumber: {
+          [config]: {
+            view: {
+              props: {
+                source: 'document,stills',
+              },
+            },
+          },
+        },
         collection: {
           [config]: {
             defaultValue: 'CineFiles',
