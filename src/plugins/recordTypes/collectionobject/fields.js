@@ -76,7 +76,6 @@ export default (pluginContext) => {
                 readOnly: true,
               },
             },
-            // compute: ({ data, path, recordData }) => computeDocDisplayName(data),
           },
         },
         docType: {
@@ -108,7 +107,7 @@ export default (pluginContext) => {
             view: {
               type: AutocompleteInput,
               props: {
-                source: 'organization/organization', // TO DO: Correct the source?
+                source: 'organization/local',
               },
             },
           },
@@ -320,7 +319,7 @@ export default (pluginContext) => {
               view: {
                 type: AutocompleteInput,
                 props: {
-                  source: 'person/person, organization/organization, organization/committee', // TO DO: Fix source names?
+                  source: 'person/local, organization/local, organization/committee',
                 },
               },
             },
@@ -344,7 +343,7 @@ export default (pluginContext) => {
               view: {
                 type: AutocompleteInput,
                 props: {
-                  source: 'work/work', // TO DO: Fix source names?
+                  source: 'work/local',
                 },
               },
             },
@@ -368,7 +367,7 @@ export default (pluginContext) => {
               view: {
                 type: AutocompleteInput,
                 props: {
-                  source: 'concept/concept', // TO DO: Fix me
+                  source: 'concept/local',
                 },
               },
             },
@@ -387,13 +386,13 @@ export default (pluginContext) => {
         },
         collection: {
           [config]: {
-            defaultValue: 'CineFiles',
+            defaultValue: 'urn:cspace:cinefiles.cspace.berkeley.edu:vocabularies:name(collection):item:name(cinefiles)\'CineFiles\'',
           },
         },
         responsibleDepartments: {
           responsibleDepartment: {
             [config]: {
-              defaultValue: 'PFA Library', // TO DO: Fix me
+              defaultValue: 'urn:cspace:cinefiles.cspace.berkeley.edu:vocabularies:name(department):item:name(pfalibrary)\'PFA Library\'',
             },
           },
         },
@@ -406,13 +405,24 @@ export default (pluginContext) => {
               },
             }),
           },
+          referenceGroup: {
+            reference: {
+              [config]: {
+                view: {
+                  props: {
+                    source: 'organization/local',
+                  },
+                },
+              },
+            },
+          },
         },
         contentConcepts: {
           contentConcept: {
             [config]: {
               view: {
                 props: {
-                  source: 'concept/concept, concept/genre', // TO DO: Fix vocab terms?
+                  source: 'concept/local, concept/genre',
                 },
               },
             },
@@ -425,7 +435,7 @@ export default (pluginContext) => {
               view: {
                 type: AutocompleteInput,
                 props: {
-                  source: 'person/person', // TO DO: Change source name?
+                  source: 'person/local',
                 },
               },
             },
@@ -438,7 +448,7 @@ export default (pluginContext) => {
               view: {
                 type: AutocompleteInput,
                 props: {
-                  source: 'organization/organization, organization/committee',
+                  source: 'organization/local, organization/committee',
                 },
               },
             },
@@ -452,10 +462,19 @@ export default (pluginContext) => {
                   type: TermPickerInput,
                   props: {
                     source: 'productionpersonrole',
-                    // ONLY works if there are 1+ terms in the array
                   },
                 },
-                defaultValue: 'Author',
+                defaultValue: 'urn:cspace:cinefiles.cspace.berkeley.edu:vocabularies:name(productionpersonrole):item:name(author)\'Author\'',
+              },
+            },
+          },
+        },
+        fieldCollectionPlace: {
+          [config]: {
+            view: {
+              type: AutocompleteInput,
+              props: {
+                source: 'place/local',
               },
             },
           },
