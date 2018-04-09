@@ -53,7 +53,7 @@ export default (pluginContext) => {
               },
               fullName: {
                 id: 'field.collectionobjects_cinefiles.docTitle.fullName',
-                defaultMessage: 'Title',
+                defaultMessage: 'Title namex',
               },
             }),
             required: true,
@@ -367,7 +367,7 @@ export default (pluginContext) => {
               view: {
                 type: AutocompleteInput,
                 props: {
-                  source: 'concept/local',
+                  source: 'concept/associated',
                 },
               },
             },
@@ -422,7 +422,7 @@ export default (pluginContext) => {
             [config]: {
               view: {
                 props: {
-                  source: 'concept/local, concept/genre',
+                  source: 'concept/associated, concept/genre',
                 },
               },
             },

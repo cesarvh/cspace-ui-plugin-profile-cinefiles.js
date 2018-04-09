@@ -25,7 +25,6 @@ const template = (pluginContext) => {
         <Row>
           <Col>
             <Field name="objectNumber" />
-            {/* <Field name="numberOfObjects" /> */}
 
             <Field name="responsibleDepartments">
               <Field name="responsibleDepartment" />
