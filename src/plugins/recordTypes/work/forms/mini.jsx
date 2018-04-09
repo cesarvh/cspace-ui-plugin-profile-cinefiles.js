@@ -34,9 +34,18 @@ const template = (pluginContext) => {
         </Field>
       </Row>
 
-      <Field name="countries" subpath="ns2:works_cinefiles">
-        <Field name="country" />
-      </Field>
+      <Row>
+
+        <Field name="workDateGroupList">
+          <Field name="workDateGroup">
+            <Field name="workDate" />
+          </Field>
+        </Field>
+
+        <Field name="countries" subpath="ns2:works_cinefiles">
+          <Field name="country" />
+        </Field>
+      </Row>
     </Field>
   );
 };
