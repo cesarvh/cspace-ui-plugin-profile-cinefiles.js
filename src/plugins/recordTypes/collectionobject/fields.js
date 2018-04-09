@@ -117,10 +117,9 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_cinefiles.pageInfo.name',
-                defaultMessage: 'Number of pages',
+                defaultMessage: 'Original pagination',
               },
             }),
-            required: true,
             view: {
               type: TextInput,
             },
@@ -477,6 +476,11 @@ export default (pluginContext) => {
                 source: 'place/local',
               },
             },
+          },
+        },
+        numberOfObjects: {
+          [config]: {
+            required: true,
           },
         },
       },

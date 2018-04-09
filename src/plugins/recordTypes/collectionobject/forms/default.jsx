@@ -56,12 +56,12 @@ const template = (pluginContext) => {
             <Field name="source" subpath="ns2:collectionobjects_cinefiles" />
             <Row>
               <Col>
-                <Field name="pageInfo" subpath="ns2:collectionobjects_cinefiles" />
+                <Field name="numberOfObjects" />
                 <Field name="accessCode" subpath="ns2:collectionobjects_cinefiles" />
               </Col>
 
               <Col>
-                <Field name="numberOfObjects" />
+                <Field name="pageInfo" subpath="ns2:collectionobjects_cinefiles" />
                 <Field name="recordStatus" />
               </Col>
             </Row>

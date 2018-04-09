@@ -3,6 +3,7 @@ import fields from './fields';
 import optionLists from './optionLists';
 import messages from './messages';
 import idGenerators from './idGenerators';
+import title from './title';
 
 export default () => pluginContext => ({
   optionLists,
@@ -12,6 +13,7 @@ export default () => pluginContext => ({
       messages,
       forms: forms(pluginContext),
       fields: fields(pluginContext),
+      title: title(pluginContext),
     },
   },
 });

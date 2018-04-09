@@ -28,8 +28,8 @@ export const computeWorkDisplayName = ({ data }) => {
 };
 
 export const computeDocDisplayName = ({ data }) => {
-  const article = data.get('docTitleArticle' || '');
-  const title = data.get('docTitle' || '');
+  const article = data.get('docTitleArticle') || '';
+  const title = data.get('docTitle') || '';
   const displayName = computeFullTitle(article, title);
 
   return data.set('docDisplayName', displayName);
