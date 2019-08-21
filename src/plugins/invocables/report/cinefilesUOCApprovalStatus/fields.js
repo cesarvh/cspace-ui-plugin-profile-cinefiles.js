@@ -38,23 +38,6 @@ export default (configContext) => {
           },
         },
       },
-      Requester: {
-        [config]: {
-          messages: defineMessages({
-            name: {
-              id: 'field.report.cinefilesUOCApprovalStatus.Requester.name',
-              defaultMessage: 'Requester',
-            },
-          }),
-          view: {
-            type: AutocompleteInput,
-            props: {
-              source: 'person/local,person/shared,organization/local,organization/shared,organization/committee',
-              showQuickAdd: false,
-            },
-          },
-        },
-      },
       AuthBy: {
         [config]: {
           messages: defineMessages({
